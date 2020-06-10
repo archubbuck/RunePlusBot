@@ -1,0 +1,14 @@
+{
+	"compilerOptions": {
+        "module": "commonjs",
+        "moduleResolution": "node",
+		"outDir": "./dist",
+		"target": "es2019",
+		"allowJs": true,
+		"checkJs": false,
+		"skipLibCheck": true,
+		"types": ["node", "node-fetch", "discord.js", "klasa"]
+	},
+	"include": ["./src/**/*"],
+	"exclude": ["node_modules", "**/dist"]
+}

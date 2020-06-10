@@ -1,0 +1,31 @@
+# Klasa
+bot/bwd/provider/json/
+src/bwd/provider/json/
+/config/private.js
+/config/private.json
+/private.json
+src/config.ts
+resources/trivia-questions.json
+dist/
+bwd/
+icon_cache/
+
+npm-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Dependency directories
+node_modules/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Application specific
+**/configuration/settings.ts
