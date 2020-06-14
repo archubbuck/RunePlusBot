@@ -33,6 +33,7 @@ export default class extends Provider {
     }
 
     public async sell(transaction: Transaction) {
+
         const relatedRecords = await this.base("Sales Deals").select({
             filterByFormula: `AND(LOWER(Item) = '${transaction.fields.Item.toLowerCase().replace("'", "\\'")}', {Sold} = '', {Trader} = '${transaction.fields.Trader}')`
         }).all() as Transaction[];
@@ -64,10 +65,12 @@ export default class extends Provider {
                 fields: {
                     Quantity: r.fields.Quantity,
                     SellPrice: r.fields.SellPrice,
-                    Sold: r.fields.Sold.toISOString().substr(0, 10)
+                    Sold: r.fields.Sold ? r.fields.Sold.toISOString().substr(0, 10) : null
                 }
             }
         }), 10);
+
+        // let toUpdate = _.chunk(relatedRecords, 10);
 
         let updated = [];
         for (let i in toUpdate) {
